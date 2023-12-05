@@ -6,9 +6,14 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('samples', function (Blueprint $table) {
             $table->id();
             $table->string('title', 50);
             $table->string('body', 200);
@@ -16,9 +21,14 @@ return new class extends Migration
             $table->softDeletes();
         });
     }
-    
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('samples');
     }
 };
